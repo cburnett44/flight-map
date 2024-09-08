@@ -1,4 +1,7 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 :root {
-    --font-body: 'Montserrat';
-    --color-accent-primary: #EE4B2B;
+	--font-body: 'Montserrat';
+	--color-accent-primary: #ee4b2b;
 }

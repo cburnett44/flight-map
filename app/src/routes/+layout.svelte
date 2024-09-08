@@ -1,16 +1,15 @@
 <script>
-    import '../app.css';
-    import Header from './components/Header.svelte';
+	import '../app.css';
+	import Header from './components/Header.svelte';
 </script>
 
 <div class="app">
-    <Header />
+	<Header></Header>
 
-    <main>
-        <slot />
-    </main>
+	<main>
+		<slot></slot>
+	</main>
 
-    <footer>
-        <p>Powered by FlightEye</p>
-    </footer>
+	<footer>
+	</footer>
 </div>
