@@ -1,6 +1,6 @@
 <script>
 	import '../app.css';
-	import Header from './components/Header.svelte';
+	import Header from './Header.svelte';
 </script>
 
 <div class="app">
@@ -13,3 +13,10 @@
 	<footer>
 	</footer>
 </div>
+
+<style>
+	.app {
+		display: flex;
+		flex-direction: column;
+	}
+</style>
