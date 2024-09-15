@@ -2,18 +2,31 @@
     import '@maptiler/sdk/dist/maptiler-sdk.css';
     import { config, Map, type MapOptions, MapStyle } from '@maptiler/sdk';
     import { onMount } from 'svelte';
+	import { isDarkMode } from '$lib/darkModeStore.js';
 
     export let data;
     config.apiKey = data.apiKey;
 
+    let map: Map;
+    isDarkMode.subscribe(updateMapDarkModeStyle);
+
+    function updateMapDarkModeStyle(darkMode: boolean) {
+      const style = darkMode ? MapStyle.BASIC.DARK : MapStyle.BASIC.LIGHT;
+      // Ensure the map has been added to the DOM and is defined before trying to set the style.
+      if (map) map.setStyle(style);
+    }
+
     onMount(async () => {
+      const initialDarkMode = document.documentElement.classList.contains('dark');
+      const initStyle = initialDarkMode ? MapStyle.BASIC.DARK : MapStyle.BASIC.LIGHT;
       const options: MapOptions = {
         container: document.getElementById("map") as HTMLElement,
-        style: MapStyle.BASIC.DARK,
+        style: initStyle,
         center: [16.62662018, 49.2125578],
         zoom: 14,
+        navigationControl: false,
       }
-      const map: Map = new Map(options);
+      map = new Map(options);
     });
 </script>
 

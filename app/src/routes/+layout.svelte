@@ -1,7 +1,8 @@
 <script lang='ts'>
 	import { onMount } from 'svelte';
 	import '../app.css';
-	import Header from './Header.svelte';
+	import Header from '../lib/components/Header.svelte';
+	import { observeDarkMode } from '$lib/darkModeObserver';
 
 	function adjustMainHeight(): void {
 		const navbar = document.querySelector('nav') as HTMLElement;
@@ -13,6 +14,7 @@
 	}
 
 	onMount(() => {
+		observeDarkMode(); // initializes the dark mode observer.
 		adjustMainHeight();
 		window.addEventListener('resize', adjustMainHeight);
 
@@ -21,7 +23,6 @@
 			window.removeEventListener('resize', adjustMainHeight);
 		}
 	});
-
 </script>
 
 <div class="app">
