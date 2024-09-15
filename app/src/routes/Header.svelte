@@ -3,7 +3,7 @@
     import { SearchOutline } from 'flowbite-svelte-icons';
   </script>
   
-<Navbar>
+<Navbar id="navbar" class="bg-gray-200 dark:bg-gray-900">
     <NavBrand href="/">
         <span class="self-center whitespace-nowrap text-3xl font-semibold text-flighteye">FLIGHTEYE</span>
     </NavBrand>

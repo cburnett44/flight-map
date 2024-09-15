@@ -9,7 +9,7 @@
     onMount(async () => {
       const options: MapOptions = {
         container: document.getElementById("map") as HTMLElement,
-        style: MapStyle.STREETS.DARK,
+        style: MapStyle.BASIC.DARK,
         center: [16.62662018, 49.2125578],
         zoom: 14,
       }
@@ -17,23 +17,6 @@
     });
 </script>
 
-<div class="map-container">
-  <div id="map" class="map"></div>
+<div class="flex justify-center items-center relative w-full h-full md:py-5 overflow-hidden">
+  <div id="map" class="w-full h-full"></div>
 </div>
-
-<style>
-  .map-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 25px;
-    padding: 100px;
-  }
-
-  .map {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-</style>
