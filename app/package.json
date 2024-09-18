@@ -37,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@maptiler/sdk": "^2.2.2"
+		"@maptiler/sdk": "^2.2.2",
+		"@turf/turf": "^7.1.0"
 	}
 }
